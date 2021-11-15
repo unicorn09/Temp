@@ -104,7 +104,7 @@ html{
       console.log(data.ans.results.bindings)
     }
   };
-  xhttp.open("GET", `http://http://20.51.247.56:5000/getsparql/?ques=${quees}`, true);
+  xhttp.open("GET", `http://20.51.247.56:5000/getsparql/?ques=${quees}`, true);
   xhttp.send();
  }
 </script>
