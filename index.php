@@ -48,7 +48,7 @@ html{
        document.getElementById('answer').innerText=data.ans
      }
    };
-   xhttp.open("GET", `http://52.146.17.189:5000/getsparqlquery/?ques=${quees}`, true);
+   xhttp.open("GET", `http://20.51.247.56:5000/getsparqlquery/?ques=${quees}`, true);
    xhttp.send();
   }
 
