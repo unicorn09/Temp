@@ -24,7 +24,8 @@ html{
      <!-- Main Input For Receiving Query to our ML -->
      
 		<input type="text" id="queees" placeholder="Write Query here.."/>
-    <input type="button"  class="btn btn-primary btn-block btn-large" value="Predict" onclick="loadDoc()"/>
+    <input type="button"  class="btn btn-primary btn-block btn-large" value="Predict Sparql" onclick="loadSparql()"/>
+    <input type="button"  class="btn btn-primary btn-block btn-large" value="Show Result" onclick="loadDoc()"/>
     
    <br>
    <br>
@@ -34,6 +35,24 @@ html{
 
 <script>
  
+ function loadSparql() {
+   
+   var quees=document.getElementById('queees').value 
+   console.log(quees)  
+   var xhttp = new XMLHttpRequest();
+   xhttp.onreadystatechange = function() {
+     console.log('Harsh',this.status )
+     if (this.readyState==4 && this.status == 200) {
+       var data = JSON.parse(this.responseText);
+       console.log(data.ans)
+       document.getElementById('answer').innerText=data.ans
+     }
+   };
+   xhttp.open("GET", `http://52.146.17.189:5000/getsparqlquery/?ques=${quees}`, true);
+   xhttp.send();
+  }
+
+
  function loadDoc() {
    
   var quees=document.getElementById('queees').value 
@@ -85,9 +104,8 @@ html{
       console.log(data.ans.results.bindings)
     }
   };
-  xhttp.open("GET", `http://20.51.247.56:5000/getsparql/?ques=${quees}`, true);
+  xhttp.open("GET", `http://http://20.51.247.56:5000/getsparql/?ques=${quees}`, true);
   xhttp.send();
-  //push
  }
 </script>
 
