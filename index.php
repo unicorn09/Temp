@@ -18,8 +18,11 @@ html{
 </head>
 
 <body>
+<div class="header">
+    <img src="http://www.nitp.ac.in/images/nitlogo.png" alt="" style="width: 100px;">
+  </div>
  <div class="login">
-	<h1>Knowledge Based System</h1>
+	<h1>Knowledge Based System of Indian Culture</h1>
 
      <!-- Main Input For Receiving Query to our ML -->
      
@@ -31,6 +34,10 @@ html{
    <br>
    <div id="answer" style="color: white; font-size: 10px;"> You will get answer here</div>
 
+ </div>
+ <div class="footer">
+   <p>Developed By <strong>Kumar Harsh, Harsh Raj & Payal Khattri</strong></p>
+   <p>Under the supervision of  <strong>Dr Md. Tanwir Uddin Haider</strong></p>
  </div>
 
 <script>
